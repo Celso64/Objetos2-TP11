@@ -10,18 +10,18 @@ class LectorProperties extends LectorConfiguraciones {
     }
 
     @Override
-    protected String[] leerArchivo(String pathFile) {
+    protected String[] leerArchivo(String pathFile) throws LectorConfiguracionExcepcion {
 	return leerPropiedades(pathFile).split("; ");
     }
 
-    private String leerPropiedades(String fileName) {
+    private String leerPropiedades(String fileName) throws LectorConfiguracionExcepcion {
 	Properties prop = new Properties();
 	try {
 	    ResourceBundle infoDataBase = ResourceBundle.getBundle(fileName);
 	    prop.setProperty("acciones", infoDataBase.getString("acciones"));
 	    return prop.getProperty("acciones");
-	} catch (Exception e1) {
-	    throw new RuntimeException("Ocurrio un error al leer la configuracion desde el archivo");
+	} catch (Exception e) {
+	    throw new LectorConfiguracionExcepcion(e.getMessage());
 	}
     }
 

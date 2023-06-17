@@ -4,8 +4,8 @@ import java.util.List;
 
 interface E_SPorPantalla {
 
-    void mostrarContenido(String contenido);
+    void mostrarContenido(String contenido) throws EntradaSalidaException;
 
-    List<Integer> leerEnteros();
+    List<Integer> leerEnteros() throws EntradaSalidaException;
 
 }

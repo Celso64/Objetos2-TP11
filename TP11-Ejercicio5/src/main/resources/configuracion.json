@@ -1,4 +1,4 @@
 {
-"acciones": ["farra.utilizacion.Accion1", "farra.utilizacion.Accion2"],
-"max_threads": 5
+"acciones": ["farra.utilizacion.Accion1", "farra.utilizacion.Accion2", "farra.utilizacion.Accion3", "farra.utilizacion.Accion4", "farra.utilizacion.Accion5", "farra.utilizacion.Accion6"],
+"max_threads": 2
 }

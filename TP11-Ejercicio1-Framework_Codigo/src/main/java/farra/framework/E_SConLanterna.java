@@ -23,7 +23,7 @@ class E_SConLanterna implements E_SPorPantalla {
     }
 
     @Override
-    public void mostrarContenido(String contenido) {
+    public void mostrarContenido(String contenido) throws EntradaSalidaException {
 
 	var array = contenido.toCharArray();
 
@@ -33,13 +33,13 @@ class E_SConLanterna implements E_SPorPantalla {
 
 	try {
 	    this.terminal.flush();
-	} catch (IOException e) {
-	    e.printStackTrace();
+	} catch (Exception e) {
+	    throw new EntradaSalidaException(e.getMessage());
 	}
     }
 
     @Override
-    public List<Integer> leerEntero() {
+    public List<Integer> leerEnteros() throws EntradaSalidaException {
 
 	try {
 	    StringBuilder buffer = new StringBuilder();
@@ -66,17 +66,15 @@ class E_SConLanterna implements E_SPorPantalla {
 	    return res;
 
 	} catch (Exception e) {
-	    e.printStackTrace();
+	    throw new EntradaSalidaException(e.getMessage());
 	}
-
-	return List.of();
     }
 
-    private void mostrarCaracter(Character caracter) {
+    private void mostrarCaracter(Character caracter) throws EntradaSalidaException {
 	try {
 	    this.terminal.putCharacter(caracter);
 	} catch (IOException e) {
-	    e.printStackTrace();
+	    throw new EntradaSalidaException(e.getMessage());
 	}
     }
 

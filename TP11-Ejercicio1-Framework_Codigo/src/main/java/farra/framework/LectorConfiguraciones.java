@@ -9,7 +9,7 @@ abstract class LectorConfiguraciones {
     protected String pathFile;
     protected Integer cantidadDeHilos = 1;
 
-    final List<Accion> leerConfiguraciones() {
+    final List<Accion> leerConfiguraciones() throws LectorConfiguracionExcepcion {
 
 	List<Accion> res = new LinkedList<>();
 
@@ -24,6 +24,6 @@ abstract class LectorConfiguraciones {
 	return this.cantidadDeHilos;
     }
 
-    protected abstract String[] leerArchivo(String pathFile);
+    protected abstract String[] leerArchivo(String pathFile) throws LectorConfiguracionExcepcion;
 
 }

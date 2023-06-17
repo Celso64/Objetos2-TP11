@@ -16,14 +16,14 @@ final class LectorJSON extends LectorConfiguraciones {
     }
 
     @Override
-    protected String[] leerArchivo(String pathFile) {
+    protected String[] leerArchivo(String pathFile) throws LectorConfiguracionExcepcion {
 	Optional<ConfiguracionJSON> config = Optional.empty();
 
 	try (FileReader reader = new FileReader(pathFile)) {
 	    config = Optional.of(this.gson.fromJson(reader, ConfiguracionJSON.class));
 	    super.cantidadDeHilos = config.get().getMax_threads();
 	} catch (Exception e) {
-	    e.printStackTrace();
+	    throw new LectorConfiguracionExcepcion(e.getMessage());
 	}
 	return config.orElseThrow().getAcciones();
     }
