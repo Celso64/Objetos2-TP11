@@ -19,5 +19,6 @@ Este proyecto contiene y usa el .jar de la version 1.2 de mi framework. La cual 
 - Soporte de archivo de configuracion .json
 
 ### Ejercicio 5
-Este proyecto contiene (cuando lo termine) y usa el .jar de la version 1.3 de mi framework. La cual trae los siguientes cambios:
+Este proyecto contiene y usa el .jar de la version 1.3 de mi framework. La cual trae los siguientes cambios:
 - Soporte para ejecucion concurrente de acciones (solo para archivos de configuracion .json)
+- Correccion de Error: Antes habia que importar manualmente las dependencias de mi framework; ahora el pom.xml viene incluido.
