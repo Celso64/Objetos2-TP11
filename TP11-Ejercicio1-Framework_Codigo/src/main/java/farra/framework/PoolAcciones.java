@@ -31,6 +31,7 @@ class PoolAcciones implements EjecutadorAcciones {
 	    Collection<Callable<String>> callables = new LinkedList<>();
 
 	    this.acciones.stream().forEach(x -> callables.add(() -> {
+		Thread.sleep(500);
 		x.ejecutar();
 		return "Listo";
 	    }));

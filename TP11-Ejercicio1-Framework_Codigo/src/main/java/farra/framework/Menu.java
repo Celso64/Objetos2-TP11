@@ -32,6 +32,7 @@ public final class Menu {
 	try {
 
 	    while (true) {
+		E_S.limpiarPantalla();
 		opcion = this.mostrarMenu();
 
 		this.poolAcciones.agregarAcciones(this.setupAcciones(opcion));
@@ -44,12 +45,14 @@ public final class Menu {
 
 	    }
 	    E_S.mostrarContenido("\nFIN DEL PROGRAMA");
+	    E_S.cerrarPantalla();
 	} catch (Exception e) {
 	    System.out.println(e.getMessage());
 	}
     }
 
     private List<Integer> mostrarMenu() throws EntradaSalidaException {
+	E_S.mostrarContenido("Ingrese 0 (solo) para salir; los valores invalidos seran ignorados\n");
 	E_S.mostrarContenido("Bienvenido, estas son sus opciones: \n");
 	E_S.mostrarContenido(this.opciones);
 	E_S.mostrarContenido("Ingrese su opción:");

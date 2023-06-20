@@ -8,4 +8,7 @@ interface E_SPorPantalla {
 
     List<Integer> leerEnteros() throws EntradaSalidaException;
 
+    void limpiarPantalla() throws EntradaSalidaException;
+
+    void cerrarPantalla() throws EntradaSalidaException;
 }

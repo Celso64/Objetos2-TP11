@@ -70,6 +70,24 @@ class E_SConLanterna implements E_SPorPantalla {
 	}
     }
 
+    @Override
+    public void limpiarPantalla() throws EntradaSalidaException {
+	try {
+	    this.terminal.clearScreen();
+	} catch (Exception e) {
+	    throw new EntradaSalidaException(e.getMessage());
+	}
+    }
+
+    @Override
+    public void cerrarPantalla() throws EntradaSalidaException {
+	try {
+	    this.terminal.close();
+	} catch (Exception e) {
+	    throw new EntradaSalidaException(e.getMessage());
+	}
+    }
+
     private void mostrarCaracter(Character caracter) throws EntradaSalidaException {
 	try {
 	    this.terminal.putCharacter(caracter);
