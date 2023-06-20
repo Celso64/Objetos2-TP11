@@ -1,6 +1,32 @@
 # Objetos2-TP11
 ## Tema: Frameworks
 
+## Como usar mi framework
+
+Implementar la interfaz Accion por cada accion deseada, con un constructor vacio.
+
+Poner la ruta de las clases que implementan Accion en un archivo de configuracion .properties o .json
+
+Intanciar la clase Menu, inyectandole la ruta del archivo de configuracion por constructor.
+
+## Ejemplos de archivo de Configuracion
+
+### .properties
+
+acciones: com.ar.accion1; com.ar.accion2
+
+### .json
+
+{
+
+"acciones": ["com.ar.accion1", "com.ar.accion1"],
+
+"max_threads: 1
+
+}
+
+## Sobre este Repo
+
 ### Ejercicio 1 - Framework Codigo
 Este proyecto contiene el codigo de la ultima version de mi framework.
 
